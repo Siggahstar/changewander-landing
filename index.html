@@ -6,67 +6,109 @@
   <title>ChangeWander</title>
   <meta name="description" content="Simple payments for local vendors." />
 
-  <!-- Favicon / Site Icon -->
   <link rel="icon" href="assets/logo-nobg.png" type="image/png" />
-
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / Nav -->
   <header class="nav">
     <div class="container nav-inner">
-      <!-- Logo from the site icon -->
-      <img src="assets/logo-nobg.png" alt="ChangeWander Logo" class="logo" />
-      <span class="badge">Private Launch</span>
+      <a href="#hero" class="logo-link">
+        <img src="assets/logo-nobg.png" alt="ChangeWander Logo" class="logo" />
+      </a>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#blog">Blog</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" style="background-image: url('https://images.pexels.com/photos/12935051/pexels-photo-12935051.jpeg'); background-size: cover; background-position: center;">
+  <section id="hero" class="hero" style="background-image: url('https://images.pexels.com/photos/12935051/pexels-photo-12935051.jpeg'); background-size: cover; background-position: center;">
     <div class="container hero-inner">
       <h1>Simple payments<br />for local vendors</h1>
       <p>ChangeWander helps small businesses onboard quickly, generate QR codes, and receive payments directly.</p>
-      <a href="#signup" class="btn btn-primary">Request Early Access</a>
+      <a href="#contact" class="btn btn-primary">Request Early Access</a>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="section features">
+  <section id="features" class="section features">
     <div class="container">
       <div class="feature-cards">
-
-        <!-- Feature: Onboard -->
         <div class="feature-card">
-          <img src="https://images.pexels.com/photos/33503521/pexels-photo-33503521.jpeg" alt="Local vendor at a stall" class="feature-img" />
+          <img src="https://images.pexels.com/photos/33503521/pexels-photo-33503521.jpeg" alt="Vendor onboarding process" class="feature-img" loading="lazy" />
           <h3>Onboard</h3>
           <p>Vendors sign up in minutes without technical setup.</p>
         </div>
-
-        <!-- Feature: Create -->
         <div class="feature-card">
-          <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg" alt="Business tech and payments" class="feature-img" />
+          <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg" alt="Business tech and payments" class="feature-img" loading="lazy" />
           <h3>Create</h3>
           <p>Each service gets a checkout page and QR code.</p>
         </div>
-
-        <!-- Feature: Get Paid -->
         <div class="feature-card">
-          <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="QR code payment interaction" class="feature-img" />
+          <img src="https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg" alt="Customer scanning QR code to pay" class="feature-img" loading="lazy" />
           <h3>Get Paid</h3>
           <p>Customers pay instantly. Funds go straight to vendors.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Status Section -->
-  <section class="section subtle status">
+  <!-- Blog Section -->
+  <section id="blog" class="section subtle">
     <div class="container">
-      <h2>Current Status</h2>
-      <p>We’re currently onboarding early vendors and preparing for public release.</p>
+      <h2>Blog</h2>
+      <p>Latest news and updates from ChangeWander.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section subtle">
+    <div class="container">
+      <h2>About ChangeWander</h2>
+      <p style="margin-bottom: 2rem; font-size:1.1rem; color:#555;">We make exploring Portugal effortless for tourists and profitable for vendors. By combining AI-driven recommendations, real-time bookings, and intuitive payment solutions, ChangeWander transforms the way people discover and enjoy local experiences.</p>
+
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>Our Mission</h3>
+          <p>ChangeWander empowers travelers to find hidden gems while giving vendors the tools to thrive. Simple, fast, and smart.</p>
+        </div>
+        <div class="about-card">
+          <h3>For Tourists</h3>
+          <p>Discover hidden gems, restaurants, cafés, and authentic experiences curated to your preferences. Book rides, tours, and activities instantly — all in one app.</p>
+        </div>
+        <div class="about-card">
+          <h3>For Vendors</h3>
+          <p>Gain visibility among travelers, manage bookings, and receive payments with minimal friction. ChangeWander helps small businesses thrive in a digital-first world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section subtle">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Want early access or have questions? Reach out to us!</p>
+      <form class="contact-form" action="mailto:changewander@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
     </div>
   </section>
 
@@ -76,6 +118,17 @@
       <p>© 2026 ChangeWander</p>
     </div>
   </footer>
+
+  <!-- JS for Hamburger -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active'); // for X animation
+    });
+  </script>
 
 </body>
 </html>
